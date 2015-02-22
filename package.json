@@ -1,0 +1,39 @@
+{
+	"name": "grunt-juice",
+	"description": "Inline stylesheets into HTML using Juice module. Useful for HTML emails.",
+	"version": "0.0.1",
+	"homepage": "https://github.com/etylsarin/grunt-juice",
+	"author": {
+		"name": "Filip Mares"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git://github.com/etylsarin/grunt-juice.git"
+	},
+	"bugs": {
+		"url": "https://github.com/etylsarin/grunt-juice/issues"
+	},
+	"licenses": [
+		{
+			"type": "MIT",
+			"url": "https://github.com/etylsarin/grunt-juice/blob/master/LICENSE-MIT"
+		}
+	],
+	"engines": {
+		"node": ">= 0.10.0"
+	},
+	"scripts": {
+		"test": "grunt test"
+	},
+	"dependencies": {
+		"juice": "~1.0.0"
+	},
+	"devDependencies": {
+		"grunt": "~0.4.0"
+	},
+	"keywords": [
+		"gruntplugin",
+		"css",
+		"email"
+	]
+}
