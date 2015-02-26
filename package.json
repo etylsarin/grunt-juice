@@ -1,7 +1,7 @@
 {
 	"name": "grunt-juice",
 	"description": "Inline stylesheets into HTML using Juice module. Useful for HTML emails.",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"homepage": "https://github.com/etylsarin/grunt-juice",
 	"author": {
 		"name": "Filip Mares"
