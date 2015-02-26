@@ -8,3 +8,16 @@ If you haven't used [Grunt](http://gruntjs.com/) before, be sure to check out th
 ```shell
 npm install grunt-juice --save-dev
 ```
+
+## Example grunt config
+```javascript
+juice: {
+    options: {},
+    dist: {
+        files: [{
+            src: "source/emails/template.html",
+            dest: 'public/emails/template.html'
+        }]
+    }
+}
+```
