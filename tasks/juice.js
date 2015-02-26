@@ -19,40 +19,34 @@ module.exports = function(grunt) {
 		// Merge task-specific and/or target-specific options with these defaults.
 		var options = this.options(),
 			done = this.async(),
-			index = 0,
-			count = this.files.length;
+			count = this.files.length,
+			index = 0;
+			
+		if (count < 1) {
+			grunt.verbose.warn('Destination not written because no source files were provided.');
+			done(false);
+		}
 		
-		// Iterate over all specified file groups.
-		this.files.forEach(function(f) {
-			var filepath = f.src.toString();
-
-			if (typeof filepath !== 'string' || filepath === '') {
-				grunt.log.error('src must be a single string');
-				return false;
+		this.files.forEach(function(file) {
+			if (!file.src) {
+				grunt.verbose.warn('Source file not found.');
+				done(false);
 			}
-			
-			if (!grunt.file.exists(filepath)) {
-				grunt.log.error('Source file "' + filepath + '" not found.');
-				return false;
-			}
-			
-			juice.juiceFile(filepath, options, function(err, html) {
-			
+			juice.juiceFile(file.src.toString(), options, function(err, html) {
 				if (err) {
 					return grunt.log.error(err);
 				}
 				
-				grunt.file.write(f.dest, html);
-				grunt.log.writeln('File "' + f.dest + '" created.');
+				grunt.file.write(file.dest, html);
+				grunt.log.writeln('File "' + file.dest + '" created.');
 				
 				index += 1;
 				if (index === count) {
-					done();
+					done(true);
 				}
-			
+				return true;
 			});
-		
 		});
+		
 	});
-
 };
