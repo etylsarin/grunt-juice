@@ -20,7 +20,7 @@ module.exports = function(grunt) {
 		var options = this.options(),
 			done = this.async(),
 			index = 0,
-			len = this.files.length;
+			count = this.files.length;
 		
 		// Iterate over all specified file groups.
 		this.files.forEach(function(f) {
